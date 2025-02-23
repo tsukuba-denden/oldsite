@@ -1,39 +1,35 @@
 body {
     font-family: sans-serif;
-    /* 必要に応じて適切な日本語フォントを指定してください */
     margin: 0;
-    color: black;
+    padding: 0;
+    background-color: #000000;
+    /* color: #333; ← 以前のテキスト色 */
+    color: #ffffff;
+    /* テキスト色を白に変更 */
+    line-height: 1.6;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.5) 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
 }
 
 header {
-    background-color: #000020;
-    /* 濃い青色をベースに */
-    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
-        /* 小さな白い点を星として表現 */
-        radial-gradient(circle, rgba(255, 255, 255, 0.05) 4px, transparent 4px);
-    /* 少し大きめの薄い点を星として表現 (密度を調整) */
-    background-size: 20px 20px, 30px 30px;
-    /* 星のパターンサイズを調整 */
-    background-position: 0 0, 10px 10px;
-    /* パターンの位置をずらして単調さを避ける */
-    background-repeat: repeat;
-    /* パターンを繰り返す */
+    /* background-image: url('starry_background.jpg');  ← 画像背景は削除 */
+    background-color: transparent;
+    /* ヘッダーの背景は透明にする（bodyの背景が透けるように） */
     color: white;
-    padding: 20px 0;
+    padding: 20px;
 }
 
 .header-content {
-    max-width: 960px;
-    /* コンテンツ幅の最大値を設定 */
-    margin: 0 auto;
     display: flex;
     align-items: center;
-    padding: 0 20px;
+    /* ロゴとテキストを縦方向に中央揃え */
 }
 
-header img {
+.logo {
     max-height: 80px;
-    /* ロゴの最大高さを調整 */
+    /* ロゴの高さ調整 */
     margin-right: 20px;
 }
 
@@ -42,76 +38,82 @@ header h1 {
     font-size: 1.8em;
 }
 
-.container {
-    display: flex;
-    max-width: 960px;
-    /* コンテンツ幅の最大値を設定 (ヘッダーと合わせる) */
-    margin: 0 auto;
-    padding: 20px;
-}
-
-aside {
-    background-color: #E0FFFF;
-    /* サイドバーの背景色 */
+#sidebar {
+    float: left;
     width: 200px;
-    /* サイドバーの幅を調整 */
+    /* サイドバーの幅 */
+    /* background-color: #A0D4D4;  ← サイドバー自体の背景色指定を削除 */
     padding: 20px;
+    box-sizing: border-box;
+    /* padding を width に含める */
 }
 
-aside nav ul {
+#sidebar ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-aside nav ul li a {
+#sidebar li {
+    margin-bottom: 10px;
+}
+
+#sidebar li a {
     display: block;
-    padding: 10px 15px;
+    padding: 10px;
+    background-color: #E0FFFF;
+    color: #333;
     text-decoration: none;
-    color: black;
-    background-color: #F0FFF0;
-    /* メニュー項目の背景色 */
-    margin-bottom: 5px;
-    border-radius: 5px;
-    /* 角丸 */
+    /* border-radius: 5px;  ← 角丸設定を削除 */
+    transition: background-color 0.3s ease;
 }
 
-aside nav ul li.active a {
-    background-color: #E6FFE6;
-    /* アクティブなメニュー項目の背景色 */
+#sidebar li a:hover {
+    background-color: #B0E0E6;
 }
 
-main {
-    background-color: #F0F0F0;
-    /* メインコンテンツエリアの背景色 */
-    padding: 20px;
-    flex-grow: 1;
-    /* メインコンテンツが残りのスペースを占める */
+#sidebar li.active a {
+    background-color: #B0E0E6;
 }
 
-.content-section {
-    margin-bottom: 20px;
-}
-
-.content-section h2 {
-    background-color: #98FB98;
-    /* セクションヘッダーの背景色 */
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    /* 角丸 */
+.section h2 {
+    background-color: #90EE90;
+    padding: 10px;
     margin-top: 0;
+    margin-bottom: 10px;
+    /* color: #ffffff;  ←  body で白色に設定しているので、ここでは不要 */
+    color: #000000;
+    /* 見出しのテキスト色を黒に設定 */
+    font-size: 1.4em;
 }
 
-.content-section p {
-    line-height: 1.6;
+#main-content {
+    margin-left: 240px;
+    /* background-color: #D3D3D3;  ← 以前の背景色 */
+    background-color: rgba(255, 255, 255, 0.4);
+    /* 白色の背景に40%の透過率 (60%の不透明度) を設定 */
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.content-section code {
-    /* コード要素のスタイル */
-    background-color: #f8f8f8;
+.section {
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+.section p {
+    /* margin-bottom: 10px; ← 以前の段落下の余白 */
+    margin-bottom: 0em;
+    /* 段落下の余白を 0.5em に調整 (または 0 にしても良い) */
+}
+
+code {
+    background-color: #f0f0f0;
+    /* コード要素の背景色 */
     padding: 2px 5px;
-    border: 1px solid #ddd;
     border-radius: 3px;
     font-family: monospace;
+    /* 等幅フォント */
 }
+
+/* 必要に応じてさらに細かくスタイルを調整してください */

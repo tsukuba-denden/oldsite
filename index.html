@@ -3,56 +3,57 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>電子電脳技術研究会</title>
+    <title>電子電腦技術研究会</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header>
         <div class="header-content">
-            <img src="https://tsukuba-denden.github.io/img/logo.png" alt="電子電脳技術研究会ロゴ">
+            <img src="https://tsukuba-denden.github.io/img/logo.png" alt="電子電腦技術研究会ロゴ" class="logo">
             <h1>筑波大学附属中学校 電子電腦技術研究会</h1>
         </div>
     </header>
-    <div class="container">
-        <aside>
-            <nav>
-                <ul>
-                    <li><a href="#">スマホ版へ</a></li>
-                    <li><a href="#">ホーム</a></li>
-                    <li><a href="#">学芸発表会特設ページ</a></li>
-                    <li><a href="#">電電について</a></li>
-                    <li><a href="#">ゲームコーナー</a></li>
-                    <li><a href="#">電電の歩み</a></li>
-                    <li><a href="#">パソコン紹介</a></li>
-                    <li><a href="#">うんちくコーナー</a></li>
-                    <li class="active"><a href="#">プログラミング</a></li>
-                </ul>
-            </nav>
-        </aside>
-        <main>
-            <section class="content-section">
-                <h2>プログラミング</h2>
-                <p>プログラミングとは、プログラムを作ること。ただそれだけ。</p>
-                <p>その時に用いられる形式的な「言語」を、「<a href="#">プログラミング言語</a>」と呼ぶ。</p>
-            </section>
-            <section class="content-section">
-                <h2>プログラミング言語</h2>
-                <p>パソコンは機械語しか理解できません。</p>
-                <p>しかし、機械語は二進法なので、人間にとって、理解しにくいです。</p>
-                <p>昔はできた人もいたららしいのですが。</p>
-                <p>なので、機械語と1対1で単語を割り振ったものを「アセンブラ」と呼びます。</p>
-                <p>例えば、 <code>add ax, 2 --> axレジスタに2をたす</code></p>
-                <p>アセンブラを使いこなすには、コンピュータの仕組みなどを熟知していないとできません。</p>
-                <p>アセンブラでもまだ理解しにくいので、もっと自然な形にしたもの、</p>
-                <p>それが、高級言語です。</p>
-            </section>
-            <section class="content-section">
-                <h2>プログラミングを始めたいと思っている人へ</h2>
-                <p>ここにコンテンツが入ります (省略)。</p>
-            </section>
-        </main>
-    </div>
+
+    <nav id="sidebar">
+        <ul>
+            <li><a href="#">スマホ版へ</a></li>
+            <li><a href="#">ホーム</a></li>
+            <li><a href="#">学芸発表会特設ページ</a></li>
+            <li><a href="#">電電について</a></li>
+            <li><a href="#">ゲームコーナー</a></li>
+            <li><a href="#">電電の歩み</a></li>
+            <li><a href="#">パソコン紹介</a></li>
+            <li><a href="#">うんちくコーナー</a></li>
+            <li class="active"><a href="#">プログラミング</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <section class="section">
+            <h2>プログラミング</h2>
+            <p>プログラミングとは、プログラムを作ること。ただそれだけ。</p>
+            <p>その時に用いられる形式的な「言語」を、「<a href="#">プログラミング言語</a>」と呼ぶ。</p>
+        </section>
+
+        <section class="section">
+            <h2>プログラミング言語</h2>
+            <p>パソコンは機械語しか理解できません。</p>
+            <p>しかし、機械語は二進法なので、人間にとって、理解しにくいです。</p>
+            <p>昔はできた人もいたららしいのですが。</p>
+            <p>なので、機械語と1対1で単語を割り振ったものを「アセンブラ」と呼びます。</p>
+            <p>例えば、 <code>add ax, 2 --> axレジスタに2をたす。</code></p>
+            <p>アセンブラを使いこなすには、コンピュータの仕組みなどを熟知していないとできません。</p>
+            <p>アセンブラでもまだ理解しにくいので、もっと自然な形にしたもの、</p>
+            <p>それが、高級言語です。</p>
+        </section>
+
+        <section class="section">
+            <h2>プログラミングを始めたいと思っている人へ</h2>
+            <p>（コンテンツは省略）</p>
+        </section>
+    </main>
+
 </body>
 
 </html>
