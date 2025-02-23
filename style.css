@@ -14,11 +14,16 @@ body {
 }
 
 header {
-    /* background-image: url('starry_background.jpg');  ← 画像背景は削除 */
+    /* background-image: url('starry_background.jpg');  ← 画像背景は削除済みのはず */
     background-color: transparent;
-    /* ヘッダーの背景は透明にする（bodyの背景が透けるように） */
     color: white;
     padding: 20px;
+    text-align: center;
+    font-size: 1.3em;
+    /* フォントサイズは大きくする設定はそのまま */
+    font-family: sans-serif;
+    font-weight: 100;
+    /* フォントウェイトを細くする設定を追加 */
 }
 
 .header-content {
@@ -40,9 +45,8 @@ header h1 {
 
 #sidebar {
     float: left;
-    width: 200px;
+    width: 250px;
     /* サイドバーの幅 */
-    /* background-color: #A0D4D4;  ← サイドバー自体の背景色指定を削除 */
     padding: 20px;
     box-sizing: border-box;
     /* padding を width に含める */
@@ -61,11 +65,12 @@ header h1 {
 #sidebar li a {
     display: block;
     padding: 10px;
-    background-color: #E0FFFF;
+    background-color: #96c9c9;
     color: #333;
     text-decoration: none;
     /* border-radius: 5px;  ← 角丸設定を削除 */
     transition: background-color 0.3s ease;
+    text-align: center;
 }
 
 #sidebar li a:hover {
@@ -73,11 +78,12 @@ header h1 {
 }
 
 #sidebar li.active a {
-    background-color: #B0E0E6;
+    background-color: #73c860;
+    /* 選択状態の背景色を #73c860 (緑色) に変更 */
 }
 
 .section h2 {
-    background-color: #90EE90;
+    background-color: #9dda93;
     padding: 10px;
     margin-top: 0;
     margin-bottom: 10px;
@@ -102,9 +108,10 @@ header h1 {
 }
 
 .section p {
-    /* margin-bottom: 10px; ← 以前の段落下の余白 */
-    margin-bottom: 0em;
-    /* 段落下の余白を 0.5em に調整 (または 0 にしても良い) */
+    margin-bottom: 0.5em;
+    /* または 0 */
+    line-height: 0.65;
+    /* 行間を 1.4倍に設定 (値を小さくすると行間が狭まります) */
 }
 
 code {
