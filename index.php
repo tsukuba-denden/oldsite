@@ -1,4 +1,3 @@
-      
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -12,19 +11,29 @@
             padding: 0;
             background-color: #000;
             color: #fff;
-            display: flex;          /* Flexbox */
-            flex-direction: row;    /* 横方向 */
-            flex-wrap: wrap;       /* 折り返し */
-            justify-content: flex-start; /*左寄せ*/
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
             min-height: 100vh;
         }
 
+        #sidebar {
+            display: flex;
+            flex-direction: column;
+            flex: 0 0 auto;
+            margin-right: 20px;
+            width: fit-content; /* Sidebar width to fit content */
+        }
+
+
         #logo-title-container {
             display: flex;
-            flex-direction: column; /* 縦方向 */
-            align-items: flex-start;  /* 左揃え */
-            flex: 1 1 auto;       /* 伸び縮み可能、基本はauto */
-            padding-right: 20px; /* 必要に応じて調整 */
+            flex-direction: column;
+            align-items: flex-start;
+            flex: 0 0 auto;
+            padding-right: 20px;
+            width: fit-content; /* Logo-title container width to fit content */
         }
 
         #logo {
@@ -47,8 +56,9 @@
         }
 
         nav {
-            flex: 0 0 100%;     /* 全幅、伸び縮みしない */
+            flex: 0 0 auto;
             background-color: #333;
+            width: 100%; /* Ensure nav takes full width of sidebar */
         }
 
         nav ul {
@@ -57,8 +67,8 @@
             margin: 0;
             display: flex;
             flex-direction: column;
-            width: fit-content; /*コンテントに合わせる*/
-
+            width: 100%; /* Ensure ul takes full width of nav */
+            box-sizing: border-box; /* Include padding and border in width */
         }
 
         nav li {}
@@ -72,6 +82,7 @@
             text-align: center;
             border-bottom: 5px solid #98fb98;
             white-space: nowrap;
+            box-sizing: border-box; /* Include padding and border in width */
         }
 
         nav li:nth-child(6) a {
@@ -85,7 +96,9 @@
 
         main {
             padding: 20px;
-            width: 100%;          /* 横幅全体 */
+            flex: 1;
+            width: auto; /* Let flex: 1 control the width */
+            min-width: 0; /* important to allow main to shrink below content width if needed */
         }
 
         section {
@@ -93,7 +106,6 @@
             background-color: #363636;
             padding: 1.5rem;
             border-radius: 0.5rem;
-            /* width: auto; */ /* 不要 */
         }
 
         section h2 {
@@ -110,26 +122,29 @@
     </style>
 </head>
 <body>
-    <div id="logo-title-container">
-        <div id="logo">
-            <img src="https://tsukuba-denden.github.io/img/logo.png" alt="電子電脳技術研究会 ロゴ">
+    <div id="sidebar">
+        <div id="logo-title-container">
+            <div id="logo">
+                <img src="https://tsukuba-denden.github.io/img/logo.png" alt="電子電脳技術研究会 ロゴ">
+            </div>
+            <h1>筑波大学附属中学校 電子電脳技術研究会</h1>
         </div>
-        <h1>筑波大学附属中学校 電子電脳技術研究会</h1>
+
+        <nav>
+            <ul>
+                <li><a href="#">スマホ版へ</a></li>
+                <li><a href="#">ホーム</a></li>
+                <li><a href="#">学芸会特設ページ</a></li>
+                <li><a href="#">電電について</a></li>
+                <li><a href="#">ゲームコーナー</a></li>
+                <li><a href="#">電電の歩み</a></li>
+                <li><a href="#">パソコン紹介</a></li>
+                <li><a href="#">うんちくコーナー</a></li>
+                <li><a href="#">プログラミング</a></li>
+            </ul>
+        </nav>
     </div>
 
-    <nav>
-        <ul>
-            <li><a href="#">スマホ版へ</a></li>
-            <li><a href="#">ホーム</a></li>
-            <li><a href="#">学芸会特設ページ</a></li>
-            <li><a href="#">電電について</a></li>
-            <li><a href="#">ゲームコーナー</a></li>
-            <li><a href="#">電電の歩み</a></li>
-            <li><a href="#">パソコン紹介</a></li>
-            <li><a href="#">うんちくコーナー</a></li>
-            <li><a href="#">プログラミング</a></li>
-        </ul>
-    </nav>
 
     <main>
         <section>
@@ -147,7 +162,6 @@
             <p>例えば、　add ax, 2　--> axレジスタに2をたす。</p>
             <p>アセンブラを使いこなすには、コンピュータの仕組みなどを熟知していないとできません。</p>
             <p>アセンブラでもまだ理解しにくいので、もっと自然な形にしたもの、<br>それが、高級言語です。</p>
-
         </section>
         <section>
             <h2>プログラミングを始めたいと思っている人へ</h2>
@@ -155,5 +169,3 @@
     </main>
 </body>
 </html>
-
-    
