@@ -13,17 +13,26 @@ body {
     background-position: 0 0, 10px 10px;
 }
 
-header {
+header h1 {
+    /* セレクタを header h1 に変更 */
     /* background-image: url('starry_background.jpg');  ← 画像背景は削除済みのはず */
-    background-color: transparent;
+    /* background-color: transparent; ← background-color は header 要素自体に設定する方が良いかも */
     color: white;
-    padding: 20px;
+    padding: 0;
+    /* h1 要素の padding は不要なので 0 に設定 */
+    margin: 0;
+    /* h1 要素の margin も不要なので 0 に設定 */
     text-align: center;
-    font-size: 1.3em;
-    /* フォントサイズは大きくする設定はそのまま */
-    font-family: sans-serif;
-    font-weight: 100;
-    /* フォントウェイトを細くする設定を追加 */
+    font-size: 2em;
+    font-weight: 300;
+    /* font-weight: 100; はこのルールに移動 */
+}
+
+header {
+    /* header 要素自体のスタイルは header ルールに記述 (背景色、padding など) */
+    background-color: transparent;
+    padding: 20px;
+    /* header 全体の padding はこちらで設定 */
 }
 
 .header-content {
