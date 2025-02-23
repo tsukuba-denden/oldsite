@@ -1,0 +1,117 @@
+body {
+    font-family: sans-serif;
+    /* 必要に応じて適切な日本語フォントを指定してください */
+    margin: 0;
+    color: black;
+}
+
+header {
+    background-color: #000020;
+    /* 濃い青色をベースに */
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+        /* 小さな白い点を星として表現 */
+        radial-gradient(circle, rgba(255, 255, 255, 0.05) 4px, transparent 4px);
+    /* 少し大きめの薄い点を星として表現 (密度を調整) */
+    background-size: 20px 20px, 30px 30px;
+    /* 星のパターンサイズを調整 */
+    background-position: 0 0, 10px 10px;
+    /* パターンの位置をずらして単調さを避ける */
+    background-repeat: repeat;
+    /* パターンを繰り返す */
+    color: white;
+    padding: 20px 0;
+}
+
+.header-content {
+    max-width: 960px;
+    /* コンテンツ幅の最大値を設定 */
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header img {
+    max-height: 80px;
+    /* ロゴの最大高さを調整 */
+    margin-right: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+.container {
+    display: flex;
+    max-width: 960px;
+    /* コンテンツ幅の最大値を設定 (ヘッダーと合わせる) */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+aside {
+    background-color: #E0FFFF;
+    /* サイドバーの背景色 */
+    width: 200px;
+    /* サイドバーの幅を調整 */
+    padding: 20px;
+}
+
+aside nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+aside nav ul li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: black;
+    background-color: #F0FFF0;
+    /* メニュー項目の背景色 */
+    margin-bottom: 5px;
+    border-radius: 5px;
+    /* 角丸 */
+}
+
+aside nav ul li.active a {
+    background-color: #E6FFE6;
+    /* アクティブなメニュー項目の背景色 */
+}
+
+main {
+    background-color: #F0F0F0;
+    /* メインコンテンツエリアの背景色 */
+    padding: 20px;
+    flex-grow: 1;
+    /* メインコンテンツが残りのスペースを占める */
+}
+
+.content-section {
+    margin-bottom: 20px;
+}
+
+.content-section h2 {
+    background-color: #98FB98;
+    /* セクションヘッダーの背景色 */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    /* 角丸 */
+    margin-top: 0;
+}
+
+.content-section p {
+    line-height: 1.6;
+}
+
+.content-section code {
+    /* コード要素のスタイル */
+    background-color: #f8f8f8;
+    padding: 2px 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-family: monospace;
+}

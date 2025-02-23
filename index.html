@@ -1,181 +1,58 @@
-<style>
-    body {
-        font-family: 'Yu Gothic', 'Hiragino Kaku Gothic ProN', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #000;
-        color: #fff;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        align-items: start;
-        min-height: 100vh;
-        padding-top: 5px;
-    }
+<!DOCTYPE html>
+<html lang="ja">
 
-    #sidebar {
-        display: flex;
-        flex-direction: column;
-        flex: 0 0 auto;
-        margin-right: 20px;
-        width: fit-content;
-        padding-top: 25px;
-    }
-
-
-    #logo-title-container {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        flex: 0 0 auto;
-        padding-right: 20px;
-        width: fit-content;
-    }
-
-    #logo {
-        padding-bottom: 10px;
-    }
-
-    #logo img {
-        max-width: 200px;
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-
-
-    /* Header styling moved to main content area */
-    .main-header h1 {
-        color: black;
-        margin: 0;
-        font-size: 2.0rem;
-        text-align: left;
-        white-space: nowrap;
-        margin-top: -5px;
-        padding-top: 25px;
-    }
-
-
-    nav {
-        flex: 0 0 auto;
-        background-color: #333;
-        width: 100%;
-    }
-
-    nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    nav li {}
-
-    nav a {
-        display: block;
-        padding: 10px 20px;
-        background-color: #0080c0;
-        color: #fff;
-        text-decoration: none;
-        text-align: center;
-        border-bottom: 5px solid #98fb98;
-        white-space: nowrap;
-        box-sizing: border-box;
-    }
-
-    nav li:nth-child(6) a {
-        border-bottom: 5px solid #f0e68c;
-    }
-
-    nav a:hover,
-    nav a:active {
-        background-color: #006699;
-    }
-
-    main {
-        padding: 20px;
-        flex: 1;
-        width: auto;
-        min-width: 0;
-    }
-
-    section {
-        margin-bottom: 30px;
-        /* Added margin-bottom to create separation between sections */
-        background-color: #fff;
-        padding: 1.5rem;
-        border-radius: 0.5rem;
-    }
-
-    section h2 {
-        display: block;
-        padding-bottom: 0.5rem;
-        font-size: 1.2em;
-        margin-bottom: 1rem;
-        background-color: #98fb98;
-        color: black;
-        padding: 0.5rem 1.5rem;
-        border-radius: 0.5rem 0.5rem 0 0;
-    }
-
-    .highlight {
-        color: #98fb98;
-    }
-</style>
+<head>
+    <meta charset="UTF-8">
+    <title>電子電脳技術研究会</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div id="sidebar">
-        <div id="logo-title-container">
-            <div id="logo">
-                <img src="https://tsukuba-denden.github.io/img/logo.png" alt="電子電脳技術研究会 ロゴ">
-            </div>
+    <header>
+        <div class="header-content">
+            <img src="https://tsukuba-denden.github.io/img/logo.png" alt="電子電脳技術研究会ロゴ">
+            <h1>筑波大学附属中学校 電子電腦技術研究会</h1>
         </div>
-
-        <nav>
-            <ul>
-                <li><a href="#">スマホ版へ</a></li>
-                <li><a href="#">ホーム</a></li>
-                <li><a href="#">学芸会特設ページ</a></li>
-                <li><a href="#">電電について</a></li>
-                <li><a href="#">ゲームコーナー</a></li>
-                <li><a href="#">電電の歩み</a></li>
-                <li><a href="#">パソコン紹介</a></li>
-                <li><a href="#">うんちくコーナー</a></li>
-                <li><a href="#">プログラミング</a></li>
-            </ul>
-        </nav>
+    </header>
+    <div class="container">
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="#">スマホ版へ</a></li>
+                    <li><a href="#">ホーム</a></li>
+                    <li><a href="#">学芸発表会特設ページ</a></li>
+                    <li><a href="#">電電について</a></li>
+                    <li><a href="#">ゲームコーナー</a></li>
+                    <li><a href="#">電電の歩み</a></li>
+                    <li><a href="#">パソコン紹介</a></li>
+                    <li><a href="#">うんちくコーナー</a></li>
+                    <li class="active"><a href="#">プログラミング</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main>
+            <section class="content-section">
+                <h2>プログラミング</h2>
+                <p>プログラミングとは、プログラムを作ること。ただそれだけ。</p>
+                <p>その時に用いられる形式的な「言語」を、「<a href="#">プログラミング言語</a>」と呼ぶ。</p>
+            </section>
+            <section class="content-section">
+                <h2>プログラミング言語</h2>
+                <p>パソコンは機械語しか理解できません。</p>
+                <p>しかし、機械語は二進法なので、人間にとって、理解しにくいです。</p>
+                <p>昔はできた人もいたららしいのですが。</p>
+                <p>なので、機械語と1対1で単語を割り振ったものを「アセンブラ」と呼びます。</p>
+                <p>例えば、 <code>add ax, 2 --> axレジスタに2をたす</code></p>
+                <p>アセンブラを使いこなすには、コンピュータの仕組みなどを熟知していないとできません。</p>
+                <p>アセンブラでもまだ理解しにくいので、もっと自然な形にしたもの、</p>
+                <p>それが、高級言語です。</p>
+            </section>
+            <section class="content-section">
+                <h2>プログラミングを始めたいと思っている人へ</h2>
+                <p>ここにコンテンツが入ります (省略)。</p>
+            </section>
+        </main>
     </div>
-
-
-    <main>
-        <header class="main-header">
-            <h1 style="color: black;">筑波大学附属中学校 電子電脳技術研究会</h1>
-        </header>
-        <section>
-            <h2 style="color: black;">プログラミング</h2>
-            <p>プログラミングとは、プログラムを作ること。ただそれだけ。</p>
-            <p>その時に用いられる形式的な「言語」を、<span class="highlight">「プログラミング言語」</span>と呼ぶ。</p>
-        </section>
-
-        <section>
-            <h2 style="color: black;">プログラミング言語</h2>
-            <p>パソコンは機械語しか理解できません。</p>
-            <p>しかし、機械語は二進法なので、人間にとって、理解しにくいです。</p>
-            <p>昔はできた人もいたららしいのですが。</p>
-            <p>なので、機械語と1対1で単語を割り振ったものを「アセンブラ」と呼びます。</p>
-            <p>例えば、　add ax, 2　--> axレジスタに2をたす。</p>
-            <p>アセンブラを使いこなすには、コンピュータの仕組みなどを熟知していないとできません。</p>
-            <p>アセンブラでもまだ理解しにくいので、もっと自然な形にしたもの、<br>それが、高級言語です。</p>
-        </section>
-        <section>
-            <h2 style="color: black;">プログラミングを始めたいと思っている人へ</h2>
-        </section>
-    </main>
 </body>
 
 </html>
