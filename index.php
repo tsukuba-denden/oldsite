@@ -1,3 +1,4 @@
+      
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -11,43 +12,43 @@
             padding: 0;
             background-color: #000;
             color: #fff;
-            display: grid;
-            grid-template-areas:
-                "logo title"
-                "nav nav"
-                "main main";
-            grid-template-columns: auto 1fr; /* ロゴとタイトルで2列 */
-            grid-template-rows: auto auto 1fr;
+            display: flex;          /* Flexbox */
+            flex-direction: row;    /* 横方向 */
+            flex-wrap: wrap;       /* 折り返し */
+            justify-content: flex-start; /*左寄せ*/
             min-height: 100vh;
         }
 
-        header {
-            grid-area: title;
-            text-align: left; /* 左寄せ */
-            padding: 20px;
-            align-self: center; /* 垂直方向中央揃え */
+        #logo-title-container {
+            display: flex;
+            flex-direction: column; /* 縦方向 */
+            align-items: flex-start;  /* 左揃え */
+            flex: 1 1 auto;       /* 伸び縮み可能、基本はauto */
+            padding-right: 20px; /* 必要に応じて調整 */
         }
-          header h1{
-            color: white;
-            margin: 0; /* h1のデフォルトマージンをリセット */
-            font-size: 1.5rem; /* フォントサイズを調整 */
-          }
+
         #logo {
-            grid-area: logo;
-            padding: 20px;
+            padding-bottom: 10px;
         }
 
         #logo img {
-            max-width: 200px; /* 最大幅をピクセル単位で指定 (例: 200px) */
-            width: 100%;      /* 親要素 (ここでは #logo) の幅に対する割合 */
+            max-width: 200px;
+            width: 100%;
             height: auto;
             display: block;
         }
 
+        #logo-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            text-align: left;
+            white-space: nowrap;
+        }
+
         nav {
-            grid-area: nav;
+            flex: 0 0 100%;     /* 全幅、伸び縮みしない */
             background-color: #333;
-            grid-column: 1 / -1; /* ナビゲーションを全幅に */
         }
 
         nav ul {
@@ -55,11 +56,12 @@
             padding: 0;
             margin: 0;
             display: flex;
+            flex-direction: column;
+            width: fit-content; /*コンテントに合わせる*/
+
         }
 
-        nav li {
-            /* flex: 1; 均等割付しない*/
-        }
+        nav li {}
 
         nav a {
             display: block;
@@ -69,10 +71,11 @@
             text-decoration: none;
             text-align: center;
             border-bottom: 5px solid #98fb98;
-            white-space: nowrap; /* メニュー項目を折り返さない */
+            white-space: nowrap;
         }
-         nav li:nth-child(6) a{ /*うんちくコーナー*/
-             border-bottom: 5px solid #f0e68c;
+
+        nav li:nth-child(6) a {
+            border-bottom: 5px solid #f0e68c;
         }
 
         nav a:hover,
@@ -81,8 +84,8 @@
         }
 
         main {
-            grid-area: main;
             padding: 20px;
+            width: 100%;          /* 横幅全体 */
         }
 
         section {
@@ -90,6 +93,7 @@
             background-color: #363636;
             padding: 1.5rem;
             border-radius: 0.5rem;
+            /* width: auto; */ /* 不要 */
         }
 
         section h2 {
@@ -106,12 +110,12 @@
     </style>
 </head>
 <body>
-    <div id="logo">
-        <img src="https://tsukuba-denden.github.io/img/logo.png" alt="電子電脳技術研究会 ロゴ">
-    </div>
-    <header>
+    <div id="logo-title-container">
+        <div id="logo">
+            <img src="https://tsukuba-denden.github.io/img/logo.png" alt="電子電脳技術研究会 ロゴ">
+        </div>
         <h1>筑波大学附属中学校 電子電脳技術研究会</h1>
-    </header>
+    </div>
 
     <nav>
         <ul>
@@ -151,3 +155,5 @@
     </main>
 </body>
 </html>
+
+    
