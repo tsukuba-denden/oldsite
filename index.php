@@ -23,7 +23,7 @@
             flex-direction: column;
             flex: 0 0 auto;
             margin-right: 20px;
-            width: fit-content; /* Sidebar width to fit content */
+            width: fit-content;
         }
 
 
@@ -33,7 +33,7 @@
             align-items: flex-start;
             flex: 0 0 auto;
             padding-right: 20px;
-            width: fit-content; /* Logo-title container width to fit content */
+            width: fit-content;
         }
 
         #logo {
@@ -47,7 +47,9 @@
             display: block;
         }
 
-        #logo-title-container h1 {
+
+        /* Header styling moved to main content area */
+        .main-header h1 {
             color: white;
             margin: 0;
             font-size: 1.5rem;
@@ -55,10 +57,11 @@
             white-space: nowrap;
         }
 
+
         nav {
             flex: 0 0 auto;
             background-color: #333;
-            width: 100%; /* Ensure nav takes full width of sidebar */
+            width: 100%;
         }
 
         nav ul {
@@ -67,8 +70,8 @@
             margin: 0;
             display: flex;
             flex-direction: column;
-            width: 100%; /* Ensure ul takes full width of nav */
-            box-sizing: border-box; /* Include padding and border in width */
+            width: 100%;
+            box-sizing: border-box;
         }
 
         nav li {}
@@ -82,7 +85,7 @@
             text-align: center;
             border-bottom: 5px solid #98fb98;
             white-space: nowrap;
-            box-sizing: border-box; /* Include padding and border in width */
+            box-sizing: border-box;
         }
 
         nav li:nth-child(6) a {
@@ -97,8 +100,8 @@
         main {
             padding: 20px;
             flex: 1;
-            width: auto; /* Let flex: 1 control the width */
-            min-width: 0; /* important to allow main to shrink below content width if needed */
+            width: auto;
+            min-width: 0;
         }
 
         section {
@@ -127,7 +130,6 @@
             <div id="logo">
                 <img src="https://tsukuba-denden.github.io/img/logo.png" alt="電子電脳技術研究会 ロゴ">
             </div>
-            <h1>筑波大学附属中学校 電子電脳技術研究会</h1>
         </div>
 
         <nav>
@@ -147,6 +149,9 @@
 
 
     <main>
+        <header class="main-header"> <!-- Header moved here, inside main -->
+            <h1>筑波大学附属中学校 電子電脳技術研究会</h1>
+        </header>
         <section>
             <h2>プログラミング</h2>
             <p>プログラミングとは、プログラムを作ること。ただそれだけ。</p>
