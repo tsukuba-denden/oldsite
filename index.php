@@ -6,89 +6,98 @@
     <title>筑波大学附属中学校 電子電脳技術研究会</title>
     <style>
         body {
-            font-family: 'Yu Gothic', 'Hiragino Kaku Gothic ProN', sans-serif; /* フォントを画像に近づける */
+            font-family: 'Yu Gothic', 'Hiragino Kaku Gothic ProN', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #000;
             color: #fff;
-            display: grid; /* グリッドレイアウトを使用 */
+            display: grid;
             grid-template-areas:
-                "header"
-                "nav"
-                "main";
-            grid-template-columns: 1fr; /* 1列 */
-            grid-template-rows: auto auto 1fr; /* ヘッダーとナビゲーションは内容に合わせて、メインは残りのスペース */
-            min-height: 100vh; /* 最小高さをビューポートの高さに */
+                "logo title"
+                "nav nav"
+                "main main";
+            grid-template-columns: auto 1fr; /* ロゴとタイトルで2列 */
+            grid-template-rows: auto auto 1fr;
+            min-height: 100vh;
         }
 
         header {
-            grid-area: header; /* グリッドエリア名を指定 */
-            background-image: url('data:image/png;base64,...'); /* Base64エンコードされた画像をここに */
-            background-size: 100% auto; /* 幅100%, 高さは自動 */
-            background-repeat: no-repeat;
-            background-position: center top;
-            text-align: center;
-
+            grid-area: title;
+            text-align: left; /* 左寄せ */
+            padding: 20px;
+            align-self: center; /* 垂直方向中央揃え */
         }
-        header h1 {
-             color:white;
+          header h1{
+            color: white;
+            margin: 0; /* h1のデフォルトマージンをリセット */
+            font-size: 1.5rem; /* フォントサイズを調整 */
+          }
+        #logo {
+            grid-area: logo;
+            padding: 20px;
+        }
+
+        #logo img {
+            max-width: 200px; /* 最大幅をピクセル単位で指定 (例: 200px) */
+            width: 100%;      /* 親要素 (ここでは #logo) の幅に対する割合 */
+            height: auto;
+            display: block;
         }
 
         nav {
-            grid-area: nav; /* グリッドエリア名を指定 */
+            grid-area: nav;
             background-color: #333;
             grid-column: 1 / -1; /* ナビゲーションを全幅に */
-
         }
 
         nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
-            display: flex; /* フレックスボックスを維持 */
-           /* flex-wrap: wrap;  画面幅に応じた折り返しはしない */
+            display: flex;
         }
 
         nav li {
-           /* flex: 1 0 20%;  均等な幅は指定しない */
-           /* min-width: 150px; 最小幅も削除 */
+            /* flex: 1; 均等割付しない*/
         }
 
         nav a {
             display: block;
-            padding: 10px 20px; /* パディングで幅を調整 */
+            padding: 10px 20px;
             background-color: #0080c0;
             color: #fff;
             text-decoration: none;
             text-align: center;
             border-bottom: 5px solid #98fb98;
+            white-space: nowrap; /* メニュー項目を折り返さない */
         }
-        nav li:nth-child(6) a{ /*うんちくコーナー*/
+         nav li:nth-child(6) a{ /*うんちくコーナー*/
              border-bottom: 5px solid #f0e68c;
         }
 
-        nav a:hover, nav a:active { /* ホバー時とアクティブ時のスタイル */
+        nav a:hover,
+        nav a:active {
             background-color: #006699;
         }
 
         main {
-            grid-area: main; /* グリッドエリア名を指定 */
+            grid-area: main;
             padding: 20px;
         }
 
         section {
-            margin-bottom: 30px; /* セクション間のマージンを増やす */
+            margin-bottom: 30px;
             background-color: #363636;
-            padding: 1.5rem; /* セクション内のパディングを調整 */
+            padding: 1.5rem;
             border-radius: 0.5rem;
         }
 
         section h2 {
-            display: inline-block;  /* コンテンツ幅に合わせる */
+            display: inline-block;
             border-bottom: 3px solid #98fb98;
             padding-bottom: 0.5rem;
-            font-size: 1.2em; /* フォントサイズを調整 */
-            margin-bottom: 1rem; /* 下マージン追加 */
+            font-size: 1.2em;
+            margin-bottom: 1rem;
         }
 
         .highlight {
@@ -97,6 +106,9 @@
     </style>
 </head>
 <body>
+    <div id="logo">
+        <img src="https://tsukuba-denden.github.io/img/logo.png" alt="電子電脳技術研究会 ロゴ">
+    </div>
     <header>
         <h1>筑波大学附属中学校 電子電脳技術研究会</h1>
     </header>
@@ -127,15 +139,15 @@
             <p>パソコンは機械語しか理解できません。</p>
             <p>しかし、機械語は二進法なので、人間にとって、理解しにくいです。</p>
             <p>昔はできた人もいたららしいのですが。</p>
-             <p>なので、機械語と1対1で単語を割り振ったものを「アセンブラ」と呼びます。</p>
+            <p>なので、機械語と1対1で単語を割り振ったものを「アセンブラ」と呼びます。</p>
             <p>例えば、　add ax, 2　--> axレジスタに2をたす。</p>
             <p>アセンブラを使いこなすには、コンピュータの仕組みなどを熟知していないとできません。</p>
             <p>アセンブラでもまだ理解しにくいので、もっと自然な形にしたもの、<br>それが、高級言語です。</p>
 
         </section>
-          <section>
-             <h2>プログラミングを始めたいと思っている人へ</h2>
-          </section>
+        <section>
+            <h2>プログラミングを始めたいと思っている人へ</h2>
+        </section>
     </main>
 </body>
 </html>
